@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2014-08-29 14:34:25
-categories: jekyll update
-tags: featured
+title:  "[백준]#10026 적록색약"
+date:   2020-01-09 22:38:28
+categories: Algorithm
+tags: baekjoon
 image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.JPG
 ---
 
