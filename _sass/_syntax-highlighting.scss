@@ -2,7 +2,7 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #eaeaea;
+    background: #fff;
     @extend %vertical-rhythm;
 
     .c     { color: #998; font-style: italic } // Comment
@@ -18,7 +18,7 @@
     .ge    { font-style: italic } // Generic.Emph
     .gr    { color: #a00 } // Generic.Error
     .gh    { color: #999 } // Generic.Heading
-    .gi    { color: #000; background-color: #fff } // Generic.Inserted
+    .gi    { color: #000; background-color: #dfd } // Generic.Inserted
     .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific
     .go    { color: #888 } // Generic.Output
     .gp    { color: #555 } // Generic.Prompt
