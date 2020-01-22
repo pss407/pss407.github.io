@@ -125,7 +125,7 @@ public class Main{
     }
     
     static boolean[][] visited;
-    static int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
+    static int[][] dir = {{1,0},{0,1},{-1,0},{0,-1};
     private static void solve() {
         Queue<Pair> queue = new LinkedList<>();
         queue.add(new Pair(x,y,2,0,0));
