@@ -60,7 +60,7 @@ RRRRR
 풀이
 ------------
 
-~~~java
+```java
 import java.util.Scanner;
 
 public class Main {
@@ -139,4 +139,4 @@ public class Main {
         }
     }
 }
-~~~
+```
