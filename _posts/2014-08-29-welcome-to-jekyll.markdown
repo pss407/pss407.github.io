@@ -6,192 +6,137 @@ categories: jekyll update
 tags: featured
 image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.JPG
 ---
+
 ## 문제
+---
 
-N×N 크기의 공간에 물고기 M마리와 아기 상어 1마리가 있다. 공간은 1×1 크기의 정사각형 칸으로 나누어져 있다. 한 칸에는 물고기가 최대 1마리 존재한다.
+적록색약은 빨간색과 초록색의 차이를 거의 느끼지 못한다. 따라서, 적록색약인 사람이 보는 그림은 아닌 사람이 보는 그림과는 좀 다를 수 있다.
 
-아기 상어와 물고기는 모두 크기를 가지고 있고, 이 크기는 자연수이다. 가장 처음에 아기 상어의 크기는 2이고, 아기 상어는 1초에 상하좌우로 인접한 한 칸씩 이동한다.
+크기가 N×N인 그리드의 각 칸에 R(빨강), G(초록), B(파랑) 중 하나를 색칠한 그림이 있다. 그림은 몇 개의 구역으로 나뉘어져 있는데, 구역은 같은 색으로 이루어져 있다. 또, 같은 색상이 상하좌우로 인접해 있는 경우에 두 글자는 같은 구역에 속한다. (색상의 차이를 거의 느끼지 못하는 경우도 같은 색상이라 한다)
 
-아기 상어는 자신의 크기보다 큰 물고기가 있는 칸은 지나갈 수 없고, 나머지 칸은 모두 지나갈 수 있다. 아기 상어는 자신의 크기보다 작은 물고기만 먹을 수 있다. 따라서, 크기가 같은 물고기는 먹을 수 없지만, 그 물고기가 있는 칸은 지나갈 수 있다.
+예를 들어, 그림이 아래와 같은 경우에
+```
+RRRBB
+GGBBB
+BBBRR
+BBRRR
+RRRRR
+```
+적록색약이 아닌 사람이 봤을 때 구역의 수는 총 4개이다. (빨강 2, 파랑 1, 초록 1) 하지만, 적록색약인 사람은 구역을 3개 볼 수 있다. (빨강-초록 2, 파랑 1)
 
-아기 상어가 어디로 이동할지 결정하는 방법은 아래와 같다.
-
-* 더 이상 먹을 수 있는 물고기가 공간에 없다면 아기 상어는 엄마 상어에게 도움을 요청한다.
-* 먹을 수 있는 물고기가 1마리라면, 그 물고기를 먹으러 간다.
-* 먹을 수 있는 물고기가 1마리보다 많다면, 거리가 가장 가까운 물고기를 먹으러 간다.
-  * 거리는 아기 상어가 있는 칸에서 물고기가 있는 칸으로 이동할 때, 지나야하는 칸의 개수의 최솟값이다.
-  * 거리가 가까운 물고기가 많다면, 가장 위에 있는 물고기, 그러한 물고기가 여러마리라면, 가장 왼쪽에 있는 물고기를 먹는다.
-
-아기 상어의 이동은 1초 걸리고, 물고기를 먹는데 걸리는 시간은 없다고 가정한다. 즉, 아기 상어가 먹을 수 있는 물고기가 있는 칸으로 이동했다면, 이동과 동시에 물고기를 먹는다. 물고기를 먹으면, 그 칸은 빈 칸이 된다.
-
-아기 상어는 자신의 크기와 같은 수의 물고기를 먹을 때 마다 크기가 1 증가한다. 예를 들어, 크기가 2인 아기 상어는 물고기를 2마리 먹으면 크기가 3이 된다.
-
-공간의 상태가 주어졌을 때, 아기 상어가 몇 초 동안 엄마 상어에게 도움을 요청하지 않고 물고기를 잡아먹을 수 있는지 구하는 프로그램을 작성하시오.
+그림이 입력으로 주어졌을 때, 적록색약인 사람이 봤을 때와 아닌 사람이 봤을 때 구역의 수를 구하는 프로그램을 작성하시오.
 
 ## 입력
+---
 
-첫째 줄에 공간의 크기 N(2 ≤ N ≤ 20)이 주어진다.
+첫째 줄에 N이 주어진다. (1 ≤ N ≤ 100)
 
-둘째 줄부터 N개의 줄에 공간의 상태가 주어진다. 공간의 상태는 0, 1, 2, 3, 4, 5, 6, 9로 이루어져 있고, 아래와 같은 의미를 가진다.
-
-* 0: 빈 칸
-* 1, 2, 3, 4, 5, 6: 칸에 있는 물고기의 크기
-* 9: 아기 상어의 위치
-
-아기 상어는 공간에 한 마리 있다.
+둘째 줄부터 N개 줄에는 그림이 주어진다.
 
 ## 출력
+---
 
-첫째 줄에 아기 상어가 엄마 상어에게 도움을 요청하지 않고 물고기를 잡아먹을 수 있는 시간을 출력한다.
+적록색약이 아닌 사람이 봤을 때의 구역의 개수와 적록색약인 사람이 봤을 때의 구역의 수를 공백으로 구분해 출력한다.
 
 ## 예제 입력 1 
+---
 
-~~~
-3
-0 0 0
-0 0 0
-0 9 0
-~~~
+```
+5
+RRRBB
+GGBBB
+BBBRR
+BBRRR
+RRRRR
+```
 
 ## 예제 출력 1 
+---
 
-~~~
-0
-~~~
-
-## 예제 입력 2
-
-~~~
-3
-0 0 1
-0 0 0
-0 9 0
-~~~
-
-## 예제 출력 2
-
-~~~
-3
-~~~
-
-## 예제 입력 3
-
-~~~
-4
-4 3 2 1
-0 0 0 0
-0 0 9 0
-1 2 3 4
-~~~
-
-## 예제 출력 3
-
-~~~
-14
-~~~
+```
+4 3
+```
 
 ## 풀이
+---
 
-~~~
-import java.util.LinkedList;
-import java.util.Queue;
+```
 import java.util.Scanner;
- 
-public class Main{
-    static int n,x,y;
-    static int[][] arr;
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        arr = new int[n][n];
-        for(int i=0;i<n;i++) {
-            for(int j=0;j<n;j++) {
-                arr[i][j] = sc.nextInt();
-                if(arr[i][j]==9) {
-                    x=i;
-                    y=j;
-                }
-            }
-        }
-        visited = new boolean[n][n];
-        solve();
-    }
-    
-    private static void init() {
-        for(int i=0;i<n;i++) {
-            for(int j=0;j<n;j++)
-                visited[i][j] = false;
-        }
-    }
-    
+
+public class Main {
+    static char[][] map;
     static boolean[][] visited;
-    static int[][] dir = {{1,0},{0,1},{-1,0},{0,-1};
-    private static void solve() {
-        Queue<Pair> queue = new LinkedList<>();
-        queue.add(new Pair(x,y,2,0,0));
-        visited[x][y] = true;
-        int result = 0;
-        while(!queue.isEmpty()) {
-            int eatX=99,eatY=99; 
-            int eat=0,big=0,cnt=0; 
-            int size = queue.size();
-            for(int j=0;j<size;j++) {
-                Pair t = queue.poll();
-                for(int i=0;i<4;i++) {
-                    int tx = t.x+dir[i][0];
-                    int ty = t.y+dir[i][1];
-                    if(tx<0 || ty<0 || tx>=n || ty>=n) continue;
-                    if(visited[tx][ty]) continue;
-                    if(arr[tx][ty]>t.big) continue;
-                    visited[tx][ty]=true;
-                    queue.add(new Pair(tx,ty,t.big,t.eat,t.cnt+1));
-                    if(arr[tx][ty]!=0&& arr[tx][ty]!=t.big) {
-                        if(tx<eatX) {
-                            eatY = ty;
-                            eatX = tx;
-                            eat = t.eat;
-                            big = t.big;
-                            cnt = t.cnt+1;
-                        }else if(tx==eatX) {
-                            if(ty<eatY) {
-                                eatY = ty;
-                                eatX = tx;
-                                eat = t.eat;
-                                big = t.big;
-                                cnt = t.cnt+1;
-                            }
-                        }
-                    }
-                }
-            }
-            if(eatX!=99) {
-                eat++; 
-                if(eat==big) {
-                    big++;
-                    eat=0;
-                }        
-                arr[x][y] = 0;
-                arr[eatX][eatY] = 9;
-                result += cnt; 
-                x = eatX; y = eatY; 
-                init(); 
-                queue.clear(); 
-                visited[eatX][eatY] = true;  
-                queue.add(new Pair(eatX,eatY,big,eat,0));
+    static int N;
+    static int[] dx = new int[]{-1, 1, 0, 0};
+    static int[] dy = new int[]{0, 0, -1, 1};
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        map = new char[N][N];
+        visited = new boolean[N][N];
+        int cnt=0;
+        int cnt1=0;
+        for(int i = 0; i < N; i++) {
+            String str = sc.next();
+            for(int j=0; j<N; j++) {
+                map[i][j] = str.charAt(j);
             }
         }
-        System.out.println(result);
+        for(int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (visited[i][j]==false) {
+                    DFS(new Pair(i,j));
+                    cnt++;
+                }
+            }
+        }
+        visited = new boolean[N][N];
+
+        for(int i=0; i<N; i++) {
+            for(int j=0; j<N; j++) {
+                if(map[i][j] == 'R') {
+                    map[i][j] = 'G';
+                }
+            }
+        }
+
+        for(int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (visited[i][j]==false) {
+                    DFS(new Pair(i,j));
+                    cnt1++;
+                }
+            }
+        }
+
+        System.out.println(cnt+" "+cnt1);
     }
-    
-    static class Pair{
-        int x,y,big,eat,cnt;
-        Pair(int x,int y,int big,int eat,int cnt){
-            this.x = x;
-            this.y = y;
-            this.big = big;
-            this.eat = eat;
-            this.cnt = cnt;
+
+    public static void DFS(Pair p) {
+        int x = p.x;
+        int y = p.y;
+        visited[x][y] = true;
+        char color = map[x][y];
+
+        for(int d = 0; d < 4; d++) {
+            int X = x+dx[d];
+            int Y = y+dy[d];
+
+            if(X>=0 && Y>=0 && X<=N-1 && Y<=N-1 && visited[X][Y]==false && map[X][Y]==color) {
+                DFS(new Pair(X, Y));
+                visited[X][Y] = true;
+            }
+        }
+    }
+    static class Pair {
+        int x;
+        int y;
+
+        public Pair(int x, int y) {
+            this.x=x;
+            this.y=y;
         }
     }
 }
-~~~
+```
