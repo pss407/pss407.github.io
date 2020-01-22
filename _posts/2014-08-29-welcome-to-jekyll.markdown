@@ -108,7 +108,8 @@ public class Main{
             for(int j=0;j<n;j++) {
                 arr[i][j] = sc.nextInt();
                 if(arr[i][j]==9) {
-                    x=i;y=j;
+                    x=i;
+                    y=j;
                 }
             }
         }
@@ -118,9 +119,8 @@ public class Main{
     
     private static void init() {
         for(int i=0;i<n;i++) {
-            for(int j=0;j<n;j++){
+            for(int j=0;j<n;j++)
                 visited[i][j] = false;
-            }
         }
     }
     
