@@ -50,7 +50,14 @@ social:
 
   - icon:	github
     url:	https://github.com/pss407
-    desc:	Fork me on github
+    desc:	my github
+    share_url:
+    share_title:
+    share_link:
+    
+  - icon: email
+    url:	mailto:pss407@gmail.com
+    desc:	
     share_url:
     share_title:
     share_link:
