@@ -4,7 +4,7 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "pss407's GitHub 블로그"
+title: "pss's GitHub 블로그"
 description: > # this means to ignore newlines until "email:"
    Welcome my blog!
 
