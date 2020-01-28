@@ -84,15 +84,15 @@ public class Main {
 
 	    for(int i=0; i<N; i++) {
 	        arr[i] = sc.nextInt();
-        }
+	    }
 
 	    for(int i=K; i<=N; i++) {
-            for (int index=0; index <= N-i; index++) {
-                cnt = solution(arr, index, i);
-                if (min > cnt)
-                    min = cnt;
+            	for (int index=0; index <= N-i; index++) {
+                	cnt = solution(arr, index, i);
+                	if (min > cnt)
+                    		min = cnt;
+		}
             }
-        }
 	    System.out.println(String.format("%.11f", min));
     }
 
