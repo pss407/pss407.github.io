@@ -35,15 +35,6 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" >
   <meta property="og:type" content="blog" />
   {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-  
-  <!-- tipuesearch -->
-  <link rel="stylesheet" href="/assets/tipuesearch/css/tipuesearch.css">
-  {% if page.tipue_search_active %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
-  <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
-  <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
-  {% endif %}
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
   <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | prepend: site.baseurl }}" type="image/png"/>
