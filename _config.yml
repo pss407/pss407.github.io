@@ -61,3 +61,12 @@ social:
 #    share_url:
 #    share_title:
 #    share_link:
+
+tipue_search:
+     include:
+         pages: false
+         collections: []
+     exclude:
+         files: [search.html, index.html, tags.html]
+         categories: []
+         tags: []
