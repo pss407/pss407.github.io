@@ -22,7 +22,7 @@ author_image: "/assets/images/author.png"
 
 paginate:	5
 
-url: "http://pss407.github.io" # the base hostname & protocol for your site
+url: "https://pss407.github.io" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '@dirkfabisch'
