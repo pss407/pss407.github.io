@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://pss407.github.io/sitemap.xml
+Sitemap: https://pss407.github.io/sitemap.xml
